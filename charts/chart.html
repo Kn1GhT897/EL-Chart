@@ -42,7 +42,10 @@
                     orient: 'vertical',
                     yearLabel: { margin: 40, formatter: window.__data__.month },
                     monthLabel: { show: false },
-                    dayLabel: { nameMap: 'ZH', margin: 15 },
+                    dayLabel: {
+                        nameMap: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                        margin: 15
+                    },
                     cellSize: 40,
                     top: 80,
                     left: 50,
