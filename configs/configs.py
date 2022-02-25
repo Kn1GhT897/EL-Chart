@@ -18,5 +18,5 @@ class Config(object):
 
 
 configs = Config(json.loads(
-    b64decode(os.getenv('configs').encode())
+    b64decode(os.getenv('CONFIGS').encode())
 ))
