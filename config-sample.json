@@ -1,0 +1,16 @@
+{
+  "spider": {
+    "parkNo": 3,
+    "buildingNo": 35,
+    "roomNo": 321
+  },
+  "smtp": {
+    "host": "smtp.qq.com",
+    "login": [ "username", "p@$$w0rd" ],
+    "sender": "username@qq.com",
+    "receiver": "target@qq.com"
+  },
+  "alert": {
+    "threshold": 10
+  }
+}
