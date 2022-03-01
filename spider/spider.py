@@ -13,12 +13,9 @@ def fetch():
         params={
             'parkNo': 3,
             'buildingNo': 40,
-            'rechargeType': 2,
             'roomNo': 529
         },
         headers={
-            'Host': 'wxpay.hnu.edu.cn',
-            'Referer': 'http://wxpay.hnu.edu.cn/electricCharge/home/',
             'X-Requested-With': 'XMLHttpRequest',
         }
     ).json()
