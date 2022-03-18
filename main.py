@@ -1,6 +1,8 @@
 import json
 import subprocess as sp
 from datetime import datetime
+from random import randint
+
 from loguru import logger
 
 import parser
@@ -10,6 +12,9 @@ from push import send_alert, send_report
 
 
 def main():
+    with open('random', 'w') as fp:
+        fp.write(f'{randint(100000, 999999)}')
+
     if datetime.now().day == 1:
         logger.info('触发每月 1 日自动推送')
         with open('chart.png', 'rb') as fp:
