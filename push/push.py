@@ -14,7 +14,7 @@ def send_alert(message):
     email['From'] = Header('电量告警', 'utf-8')
     email['To'] = Header('User', 'utf-8')
     email['Subject'] = Header('宿舍余电即将不足', 'utf-8')
-    smtp.sendmail(configs.smtp.sender, [configs.smtp.receiver], email.as_string())
+    smtp.sendmail(configs.smtp.sender, [*configs.smtp.receivers], email.as_string())
 
 
 # images: list[(bytes, id: str)]
@@ -32,4 +32,4 @@ def send_report(message, images):
         mime = MIMEImage(image)
         mime.add_header('Content-ID', id_str)
         email.attach(mime)
-    smtp.sendmail(configs.smtp.sender, [configs.smtp.receiver], email.as_string())
+    smtp.sendmail(configs.smtp.sender, [*configs.smtp.receivers], email.as_string())

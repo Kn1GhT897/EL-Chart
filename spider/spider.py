@@ -4,6 +4,8 @@ import re
 from datetime import datetime
 
 import httpx
+from configs import configs
+from loguru import logger
 
 
 def fetch():
@@ -34,7 +36,12 @@ def update():
             new_records[date] = records[date]
 
     today = float(re.search('[0-9.]+', fetch()['data']['Balance']).group())
-    new_records[time_now.strftime('%Y-%m-%d')] = today
+    today_str = time_now.strftime('%Y-%m-%d')
+    if today_str not in new_records:
+        new_records[today_str] = today
+    elif not configs.alert.always:
+        logger.info('今日记录已存在，不再触发推送')
+        return None, None
 
     pickle.dump(new_records, open(record_path, 'wb'))
 
