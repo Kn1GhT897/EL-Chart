@@ -29,7 +29,8 @@ def main():
             send_alert(f'截至 {datetime.now().strftime("%m 月 %d 日 %H:%M")}，您的宿舍仅剩 <b>{today}</b> 度电')
 
         data = {
-            'month': datetime.now().strftime('%Y-%m'),
+            'month': datetime.now().strftime("%Y-%m"),
+            'title': f'{datetime.now().strftime("%Y-%m-%d")} (余 {today} 度)',
             'data': parser.parse(records)
         }
         json.dump(data, open('charts/data.json', 'w'))
