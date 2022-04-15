@@ -30,7 +30,7 @@ def main():
 
         data = {
             'month': datetime.now().strftime("%Y-%m"),
-            'title': f'{datetime.now().strftime("%Y-%m-%d")} (余 {today} 度)',
+            'title': f'{datetime.now().strftime("%Y-%m-%d")} ({today} kWh)',
             'data': parser.parse(records)
         }
         json.dump(data, open('charts/data.json', 'w'))
